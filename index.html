@@ -1,16 +1,71 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#17120e"><title>Star Furniture | Harihar</title><link rel="stylesheet" href="style.css"></head><body>
-<header><div class="brand">★ <span>STAR<br><small>FURNITURE</small></span></div><button class="menu" onclick="openS('menu')">☰</button></header>
-<section class="hero"><div class="copy"><small>HARIHAR • KARNATAKA</small><h1>Furniture that<br><i>feels like home.</i></h1><p>Discover furniture designed to bring comfort, character and style into every room.</p><button onclick="openS('collection')">Explore Collection</button><button class="outline" onclick="openS('contact')">Visit Store</button></div><div class="room"><div class="lamp"></div><div class="sofa"><b></b></div><div class="table"></div></div></section>
-<div class="strip"><span>01<br><b>HOME FURNITURE</b></span><span>02<br><b>MODERN DESIGNS</b></span><span>03<br><b>LOCAL STORE</b></span></div>
-<section class="intro"><small>THE STAR DIFFERENCE</small><h2>Make your space<br><i>feel yours.</i></h2><p>From everyday essentials to statement pieces, find furniture that fits your home and your lifestyle.</p></section>
-<section class="cards"><button class="card dark" onclick="openS('living')"><small>LIVING</small><h3>Sofas & Seating</h3><p>Comfort-first pieces for your everyday spaces.</p><b>↗</b></button><button class="card warm" onclick="openS('bed')"><small>BEDROOM</small><h3>Beds & Storage</h3><p>Bring warmth and order into your bedroom.</p><b>↗</b></button><button class="card light" onclick="openS('dining')"><small>DINING</small><h3>Tables & Chairs</h3><p>Spaces made for meals, moments and memories.</p><b>↗</b></button></section>
-<section class="feature"><div class="chairArt"><div class="chair"></div></div><div class="featureText"><small>VISIT STAR FURNITURE</small><h2>See it.<br><i>Feel it.</i><br>Choose it.</h2><p>Visit our Harihar store and explore furniture in person.</p><button class="link" onclick="openS('contact')">Get Store Details →</button></div></section>
-<section class="cta"><small>READY FOR A CHANGE?</small><h2>Let's find the<br><i>right piece.</i></h2><p>Call the store or visit us for furniture enquiries.</p><button onclick="callStore()">Call Star Furniture</button></section>
-<footer><div class="brand">★ <span>STAR<br><small>FURNITURE</small></span></div><p>Harihar, Karnataka</p><small>Sample website concept</small></footer>
-<div id="back" onclick="closeS()"></div><div class="sheet" id="menu"><button class="x" onclick="closeS()">×</button><small>MENU</small><button onclick="openS('collection')">Collection →</button><button onclick="openS('contact')">Visit Store →</button><button onclick="callStore()">Call Us →</button></div>
-<div class="sheet" id="collection"><button class="x" onclick="closeS()">×</button><small>COLLECTION</small><h2>Explore by room.</h2><button onclick="openS('living')">Living Room →</button><button onclick="openS('bed')">Bedroom →</button><button onclick="openS('dining')">Dining →</button><p class="note">Final photos, products and prices can be added after the store shares its catalogue.</p></div>
-<div class="sheet" id="living"><button class="x" onclick="closeS()">×</button><small>LIVING ROOM</small><h2>Sofas & seating</h2><p>Showcase the store's real sofa and seating collection here with photos, names and enquiry buttons.</p><button class="primary" onclick="openS('contact')">Enquire at Store</button></div>
-<div class="sheet" id="bed"><button class="x" onclick="closeS()">×</button><small>BEDROOM</small><h2>Beds & storage</h2><p>Feature beds, wardrobes, dressing units and other bedroom pieces with real product photos.</p><button class="primary" onclick="openS('contact')">Enquire at Store</button></div>
-<div class="sheet" id="dining"><button class="x" onclick="closeS()">×</button><small>DINING</small><h2>Tables & chairs</h2><p>Feature dining sets and chairs here. The final website can include a swipeable product gallery.</p><button class="primary" onclick="openS('contact')">Enquire at Store</button></div>
-<div class="sheet" id="contact"><button class="x" onclick="closeS()">×</button><small>STAR FURNITURE</small><h2>Let's talk furniture.</h2><p>📍 GR67+QCC, PB Rd, Harihar, Karnataka 577601</p><p>☎ +91 83102 83157</p><a class="primary block" href="https://maps.app.goo.gl/" target="_blank">Open Google Maps</a><button class="outline darkText block" onclick="callStore()">Call Store</button><p class="note">Final version can add WhatsApp, exact timings, social links and the owner's preferred map link.</p></div>
-<script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Star Furniture | Harihar</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#111;color:#f7f2ea;line-height:1.5}
+.hero{min-height:100vh;padding:25px 20px;display:flex;flex-direction:column;justify-content:space-between;background:radial-gradient(circle at 80% 20%,#806445,#302519 35%,#111 70%)}
+.nav{display:flex;justify-content:space-between;align-items:center}.logo{font-weight:800;letter-spacing:2px;font-size:19px}.loc{font-size:10px;color:#cdbb9c}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;color:#d2ad70;font-size:11px;margin-bottom:10px}
+h1{font-size:48px;line-height:1;margin-bottom:18px}h2{font-size:30px;margin-bottom:15px}
+p{color:#c9c1b5}.buttons{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.btn{padding:14px 20px;border-radius:30px;text-decoration:none;font-weight:bold;border:0}.gold{background:#e3c28d;color:#17120d}.outline{background:#ffffff10;color:white;border:1px solid #776b5d}
+section{padding:40px 20px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:#211d18;border:1px solid #3b3329;border-radius:22px;padding:20px 15px;height:155px;cursor:pointer}.card b{display:block;margin-top:35px;font-size:18px}.card small{color:#958c80}
+.contact{margin:15px 20px 30px;background:#e3c28d;color:#17120d;border-radius:25px;padding:25px}.contact p{color:#302519;margin:8px 0 18px}.dark{background:#17120d;color:white}
+footer{text-align:center;padding:25px;color:#80776c;font-size:12px}
+.sheet{display:none;position:fixed;inset:0;background:#0009;align-items:flex-end;z-index:5}.sheet.show{display:flex}
+.panel{background:#211d18;border-radius:28px 28px 0 0;padding:25px;width:100%;min-height:35%;border-top:1px solid #63513b}.close{float:right;border:0;background:#ffffff12;color:white;border-radius:50%;width:38px;height:38px}.panel h3{font-size:27px;margin:10px 0}.panel p{margin-bottom:18px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+<div class="nav"><div class="logo">★ STAR<br>FURNITURE</div><div class="loc">HARIHAR • KARNATAKA</div></div>
+<div>
+<div class="eyebrow">Furniture that feels like home</div>
+<h1>Beautiful spaces.<br>Made for living.</h1>
+<p>Discover furniture designed to bring comfort, character and style into every room.</p>
+<div class="buttons">
+<button class="btn gold" onclick="openBox('collections')">Explore Collections</button>
+<button class="btn outline" onclick="openBox('visit')">Visit Store</button>
+</div>
+</div>
+</header>
+
+<section>
+<div class="eyebrow">Collections</div>
+<h2>Find your style</h2>
+<div class="grid">
+<div class="card" onclick="openBox('living')"><small>01 • LIVING</small><b>Sofas & Seating</b><small>Comfort-first pieces.</small></div>
+<div class="card" onclick="openBox('bedroom')"><small>02 • BEDROOM</small><b>Beds & Storage</b><small>Comfortable everyday living.</small></div>
+<div class="card" onclick="openBox('dining')"><small>03 • DINING</small><b>Tables & Chairs</b><small>Made for family time.</small></div>
+<div class="card" onclick="openBox('visit')"><small>04 • STORE</small><b>Visit Star Furniture</b><small>Harihar, Karnataka.</small></div>
+</div>
+</section>
+
+<div class="contact">
+<div class="eyebrow">Star Furniture</div>
+<h2>Let's furnish your space.</h2>
+<p>PB Road, Harihar, Karnataka</p>
+<a class="btn dark" href="tel:+918310283157">Call Store</a>
+</div>
+
+<footer>© 2026 Star Furniture • Harihar, Karnataka</footer>
+
+<div id="box" class="sheet" onclick="if(event.target==this)closeBox()">
+<div class="panel">
+<button class="close" onclick="closeBox()">×</button>
+<div id="text"></div>
+</div>
+</div>
+
+<script>
+let data={
+collections:['Our Collections','Explore living room, bedroom and dining furniture. Ask us about available designs, sizes and finishes.'],
+living:['Living Room','Sofas, coffee tables, TV units and storage pieces for comfortable everyday living.'],
+bedroom:['Bedroom','Beds, wardrobes and side tables designed for a clean and comfortable bedroom.'],
+dining:['Dining','Dining tables, chairs
