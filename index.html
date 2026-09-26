@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Star Furniture | Harihar</title>
 
@@ -14,6 +17,10 @@ margin:0;
 padding:0;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:Arial,Helvetica,sans-serif;
 background:#11100f;
@@ -21,108 +28,121 @@ color:#f7f2ea;
 line-height:1.5;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
-min-height:100vh;
-padding:25px 20px;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-
+padding:24px 20px 55px;
 background:
-radial-gradient(
-circle at 80% 20%,
-#765a3d 0%,
-#39291b 25%,
-#11100f 68%
-);
+radial-gradient(circle at 85% 15%,#765a3d 0%,#3a291b 25%,#11100f 62%);
 }
 
 .nav{
 display:flex;
 justify-content:space-between;
 align-items:flex-start;
-gap:20px;
+gap:15px;
 }
 
 .logo{
-font-size:30px;
+font-size:28px;
 font-weight:800;
+line-height:1.05;
 letter-spacing:2px;
 }
 
 .location{
-color:#d7c6ad;
-font-size:14px;
-margin-top:8px;
+font-size:13px;
+color:#d8c8b2;
 text-align:right;
+margin-top:5px;
+}
+
+.hero-content{
+margin-top:65px;
 }
 
 .eyebrow{
 color:#d8b57c;
-text-transform:uppercase;
+font-size:12px;
 letter-spacing:4px;
-font-size:13px;
-margin-bottom:24px;
+text-transform:uppercase;
+margin-bottom:18px;
 }
 
 h1{
-font-size:56px;
+font-size:48px;
 line-height:.98;
-margin-bottom:25px;
+letter-spacing:-1px;
+margin-bottom:22px;
 }
 
-.hero p{
+.hero-text{
 color:#c9c2ba;
-font-size:18px;
-max-width:520px;
+font-size:17px;
+max-width:500px;
 }
 
-/* COLLECTION */
+/* HERO VISUAL */
+
+.hero-visual{
+margin-top:35px;
+height:260px;
+border-radius:30px;
+overflow:hidden;
+border:1px solid #514333;
+background:#211b16;
+}
+
+.hero-visual svg{
+width:100%;
+height:100%;
+display:block;
+}
+
+/* ================= COLLECTION ================= */
 
 section{
-padding:70px 20px;
+padding:65px 20px;
 }
 
 .section-label{
 color:#d8b57c;
-text-transform:uppercase;
+font-size:12px;
 letter-spacing:4px;
-font-size:13px;
-margin-bottom:20px;
+text-transform:uppercase;
+margin-bottom:15px;
 }
 
 h2{
-font-size:42px;
-margin-bottom:35px;
+font-size:38px;
+line-height:1.05;
+margin-bottom:30px;
 }
 
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:18px;
+gap:14px;
 }
 
-/* CARDS */
+/* ================= CARDS ================= */
 
 .card{
-display:block;
 background:#211d18;
 border:1px solid #3b352d;
-border-radius:28px;
+border-radius:26px;
 overflow:hidden;
-cursor:pointer;
 transition:.25s;
 }
 
-.card:hover{
+.card[open]{
+grid-column:1 / -1;
 border-color:#d8b57c;
+background:#292219;
 }
 
 .card summary{
 list-style:none;
-display:block;
 cursor:pointer;
 }
 
@@ -131,159 +151,174 @@ display:none;
 }
 
 .card-image{
+height:155px;
 width:100%;
-height:180px;
-object-fit:cover;
+display:block;
+background:#30271f;
+}
+
+.card-image svg{
+width:100%;
+height:100%;
 display:block;
 }
 
 .card-content{
-padding:22px;
-min-height:190px;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
+padding:20px;
 }
 
 .number{
+font-size:13px;
 color:#968b7e;
-font-size:14px;
 letter-spacing:1px;
 }
 
 .card h3{
-font-size:24px;
-margin:10px 0 7px;
+font-size:21px;
+line-height:1.15;
+margin:12px 0 7px;
 }
 
-.card p{
-color:#968e86;
-font-size:16px;
+.card-description{
+color:#a59d94;
+font-size:15px;
 }
 
-/* OPEN CONTENT */
+/* ================= OPEN DETAILS ================= */
 
-.popup{
-padding:0 22px 25px;
+.details-content{
+padding:0 20px 24px;
 }
 
-.popup-inner{
-border-top:1px solid #40382f;
-padding-top:20px;
+.details-line{
+height:1px;
+background:#494035;
+margin-bottom:20px;
 }
 
-.popup-title{
+.details-title{
 color:#d8b57c;
-font-size:14px;
+font-size:12px;
+letter-spacing:3px;
 text-transform:uppercase;
-letter-spacing:2px;
-margin-bottom:15px;
+margin-bottom:12px;
 }
 
-.popup-text{
-color:#c9c0b6;
+.details-description{
+color:#cbc2b7;
 font-size:16px;
-margin-bottom:15px;
+margin-bottom:18px;
 }
 
-.popup-item{
-background:#302a23;
-padding:15px;
-border-radius:15px;
-margin-top:10px;
+.product-list{
+display:grid;
+gap:10px;
 }
 
-.popup-item strong{
+.product{
+background:#332b23;
+border-radius:16px;
+padding:14px 16px;
+}
+
+.product strong{
 display:block;
-font-size:17px;
+font-size:16px;
 margin-bottom:3px;
 }
 
-.popup-item span{
-color:#a59d94;
+.product span{
+color:#aaa197;
 font-size:14px;
 }
 
-/* CONTACT */
+.close-note{
+margin-top:18px;
+color:#8f877e;
+font-size:12px;
+}
+
+/* ================= CONTACT ================= */
 
 .contact{
-margin:0 20px 40px;
-padding:45px 30px;
-border-radius:35px;
+margin:10px 20px 45px;
+padding:38px 26px;
+border-radius:32px;
 background:#e5c38e;
 color:#16120e;
 }
 
-.contact .section-label{
-color:#a17c46;
+.contact-label{
+color:#9d7844;
+font-size:12px;
+letter-spacing:4px;
+margin-bottom:15px;
 }
 
 .contact h2{
-font-size:40px;
-margin-bottom:20px;
+font-size:38px;
+margin-bottom:18px;
 }
 
 .contact p{
-font-size:19px;
-margin-bottom:25px;
+font-size:18px;
+margin-bottom:22px;
 }
 
-.btn{
+.buttons{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.button{
 display:inline-block;
+text-decoration:none;
 background:#17130f;
 color:white;
-padding:15px 25px;
+padding:14px 22px;
 border-radius:30px;
-font-size:16px;
-text-decoration:none;
+font-size:15px;
 }
 
-/* FOOTER */
+.button.light{
+background:#f4dfb8;
+color:#17130f;
+border:1px solid #b99761;
+}
+
+/* ================= FOOTER ================= */
 
 footer{
 text-align:center;
-padding:35px 20px;
+padding:30px 20px 40px;
 color:#77716b;
-font-size:14px;
+font-size:13px;
 }
 
-/* MOBILE */
-
-@media(max-width:500px){
-
-h1{
-font-size:50px;
-}
-
-h2{
-font-size:36px;
-}
-
-.card-image{
-height:155px;
-}
-
-.card-content{
-min-height:180px;
-padding:20px;
-}
-
-.card h3{
-font-size:21px;
-}
-
-.location{
-font-size:12px;
-}
-
-}
-
-/* DESKTOP */
+/* ================= DESKTOP ================= */
 
 @media(min-width:700px){
 
 .hero{
-padding:40px 70px;
+padding:40px 70px 70px;
+}
+
+.hero-content{
+margin-top:80px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero-visual{
+margin-top:0;
+height:360px;
+}
+
+h1{
+font-size:72px;
 }
 
 section{
@@ -294,22 +329,28 @@ padding:90px 70px;
 grid-template-columns:repeat(4,1fr);
 }
 
+.card[open]{
+grid-column:1 / -1;
+}
+
 .contact{
-margin:0 70px 50px;
+margin-left:70px;
+margin-right:70px;
 }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
-<div class="hero">
+<header class="hero">
 
 <div class="nav">
 
@@ -325,6 +366,8 @@ HARIHAR • KARNATAKA
 </div>
 
 
+<div class="hero-content">
+
 <div>
 
 <div class="eyebrow">
@@ -337,18 +380,106 @@ Spaces.<br>
 Made for living.
 </h1>
 
-<p>
+<p class="hero-text">
 Discover furniture designed to bring comfort,
 character and style into every room.
 </p>
 
 </div>
 
+
+<!-- HERO FURNITURE ILLUSTRATION -->
+
+<div class="hero-visual">
+
+<svg viewBox="0 0 600 400"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect width="600" height="400" fill="#241c15"/>
+
+<circle cx="470" cy="90"
+r="85"
+fill="#765a3d"
+opacity=".45"/>
+
+<rect x="70" y="245"
+width="360"
+height="70"
+rx="20"
+fill="#8b6847"/>
+
+<rect x="90" y="185"
+width="310"
+height="85"
+rx="28"
+fill="#9c7751"/>
+
+<rect x="105" y="155"
+width="95"
+height="100"
+rx="28"
+fill="#aa8358"/>
+
+<rect x="300" y="155"
+width="95"
+height="100"
+rx="28"
+fill="#aa8358"/>
+
+<rect x="110" y="310"
+width="18"
+height="55"
+fill="#5d432e"/>
+
+<rect x="375" y="310"
+width="18"
+height="55"
+fill="#5d432e"/>
+
+<circle cx="475" cy="260"
+r="48"
+fill="#3e3329"/>
+
+<rect x="430" y="265"
+width="90"
+height="55"
+rx="10"
+fill="#594532"/>
+
+<path d="M475 260 C455 205 465 150 490 115"
+stroke="#68734d"
+stroke-width="8"
+fill="none"/>
+
+<ellipse cx="455" cy="175"
+rx="38"
+ry="18"
+fill="#718052"
+transform="rotate(-30 455 175)"/>
+
+<ellipse cx="500" cy="145"
+rx="40"
+ry="18"
+fill="#718052"
+transform="rotate(25 500 145)"/>
+
+<ellipse cx="475" cy="125"
+rx="38"
+ry="17"
+fill="#7d8d5b"
+transform="rotate(-5 475 125)"/>
+
+</svg>
+
 </div>
 
+</div>
+
+</header>
 
 
-<!-- COLLECTIONS -->
+
+<!-- ================= COLLECTIONS ================= -->
 
 <section>
 
@@ -364,16 +495,62 @@ Find your style
 <div class="grid">
 
 
-<!-- LIVING -->
+<!-- ================= LIVING ================= -->
 
 <details class="card">
 
 <summary>
 
-<img
-class="card-image"
-src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=85"
-alt="Modern sofa living room">
+<div class="card-image">
+
+<svg viewBox="0 0 600 300"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect width="600" height="300" fill="#2b2118"/>
+
+<rect x="80" y="155"
+width="350"
+height="65"
+rx="20"
+fill="#a77d52"/>
+
+<rect x="105" y="105"
+width="300"
+height="80"
+rx="25"
+fill="#b88b5b"/>
+
+<rect x="115" y="85"
+width="85" height="90"
+rx="22"
+fill="#c09665"/>
+
+<rect x="310" y="85"
+width="85" height="90"
+rx="22"
+fill="#c09665"/>
+
+<rect x="110" y="215"
+width="18" height="45"
+fill="#65472f"/>
+
+<rect x="390" y="215"
+width="18" height="45"
+fill="#65472f"/>
+
+<circle cx="485" cy="180"
+r="35"
+fill="#54412e"/>
+
+<rect x="450" y="195"
+width="70"
+height="40"
+rx="8"
+fill="#765638"/>
+
+</svg>
+
+</div>
 
 <div class="card-content">
 
@@ -381,51 +558,52 @@ alt="Modern sofa living room">
 01 • LIVING
 </div>
 
-<div>
-
 <h3>
 Sofas & Seating
 </h3>
 
-<p>
+<p class="card-description">
 Comfort-first pieces.
 </p>
-
-</div>
 
 </div>
 
 </summary>
 
 
-<div class="popup">
+<div class="details-content">
 
-<div class="popup-inner">
+<div class="details-line"></div>
 
-<div class="popup-title">
+<div class="details-title">
 Living Collection
 </div>
 
-<div class="popup-text">
+<p class="details-description">
 Create a comfortable and stylish living room for your family and guests.
-</div>
+</p>
 
+<div class="product-list">
 
-<div class="popup-item">
+<div class="product">
 <strong>Sofas</strong>
 <span>Comfortable seating for everyday living.</span>
 </div>
 
-<div class="popup-item">
+<div class="product">
 <strong>Sofa Sets</strong>
 <span>Complete seating combinations for modern homes.</span>
 </div>
 
-<div class="popup-item">
+<div class="product">
 <strong>Centre Tables</strong>
 <span>Elegant tables to complete your living space.</span>
 </div>
 
+</div>
+
+<div class="close-note">
+Tap the card again to close.
 </div>
 
 </div>
@@ -434,16 +612,62 @@ Create a comfortable and stylish living room for your family and guests.
 
 
 
-<!-- BEDROOM -->
+<!-- ================= BEDROOM ================= -->
 
 <details class="card">
 
 <summary>
 
-<img
-class="card-image"
-src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=85"
-alt="Modern bedroom furniture">
+<div class="card-image">
+
+<svg viewBox="0 0 600 300"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect width="600" height="300" fill="#28201b"/>
+
+<rect x="80" y="100"
+width="440"
+height="120"
+rx="18"
+fill="#654b37"/>
+
+<rect x="105" y="135"
+width="390"
+height="105"
+rx="15"
+fill="#9b7758"/>
+
+<rect x="130" y="105"
+width="125"
+height="55"
+rx="15"
+fill="#d0b493"/>
+
+<rect x="275" y="105"
+width="125"
+height="55"
+rx="15"
+fill="#d0b493"/>
+
+<rect x="105" y="220"
+width="390"
+height="30"
+fill="#4d3929"/>
+
+<rect x="455" y="120"
+width="55"
+height="100"
+rx="8"
+fill="#735439"/>
+
+<circle cx="483"
+cy="145"
+r="8"
+fill="#d8b57c"/>
+
+</svg>
+
+</div>
 
 <div class="card-content">
 
@@ -451,51 +675,52 @@ alt="Modern bedroom furniture">
 02 • BEDROOM
 </div>
 
-<div>
-
 <h3>
 Beds & Storage
 </h3>
 
-<p>
+<p class="card-description">
 Comfortable everyday living.
 </p>
-
-</div>
 
 </div>
 
 </summary>
 
 
-<div class="popup">
+<div class="details-content">
 
-<div class="popup-inner">
+<div class="details-line"></div>
 
-<div class="popup-title">
+<div class="details-title">
 Bedroom Collection
 </div>
 
-<div class="popup-text">
+<p class="details-description">
 Beautiful bedroom furniture designed for comfort, organization and style.
-</div>
+</p>
 
+<div class="product-list">
 
-<div class="popup-item">
+<div class="product">
 <strong>Beds</strong>
 <span>Strong and stylish beds for modern bedrooms.</span>
 </div>
 
-<div class="popup-item">
+<div class="product">
 <strong>Wardrobes</strong>
 <span>Practical storage for clothes and belongings.</span>
 </div>
 
-<div class="popup-item">
+<div class="product">
 <strong>Bedside Tables</strong>
 <span>Compact and useful storage beside your bed.</span>
 </div>
 
+</div>
+
+<div class="close-note">
+Tap the card again to close.
 </div>
 
 </div>
@@ -504,16 +729,68 @@ Beautiful bedroom furniture designed for comfort, organization and style.
 
 
 
-<!-- DINING -->
+<!-- ================= DINING ================= -->
 
 <details class="card">
 
 <summary>
 
-<img
-class="card-image"
-src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=900&q=85"
-alt="Modern dining table and chairs">
+<div class="card-image">
+
+<svg viewBox="0 0 600 300"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect width="600" height="300" fill="#2b2118"/>
+
+<rect x="115" y="105"
+width="370"
+height="55"
+rx="12"
+fill="#a87c4d"/>
+
+<rect x="150" y="155"
+width="22"
+height="100"
+fill="#63462d"/>
+
+<rect x="430" y="155"
+width="22"
+height="100"
+fill="#63462d"/>
+
+<rect x="65" y="160"
+width="70"
+height="80"
+rx="12"
+fill="#896542"/>
+
+<rect x="465" y="160"
+width="70"
+height="80"
+rx="12"
+fill="#896542"/>
+
+<rect x="250" y="160"
+width="70"
+height="80"
+rx="12"
+fill="#765436"/>
+
+<circle cx="250" cy="90"
+r="12"
+fill="#d8b57c"/>
+
+<circle cx="300" cy="90"
+r="12"
+fill="#d8b57c"/>
+
+<circle cx="350" cy="90"
+r="12"
+fill="#d8b57c"/>
+
+</svg>
+
+</div>
 
 <div class="card-content">
 
@@ -521,51 +798,52 @@ alt="Modern dining table and chairs">
 03 • DINING
 </div>
 
-<div>
-
 <h3>
 Tables & Chairs
 </h3>
 
-<p>
+<p class="card-description">
 Made for family time.
 </p>
-
-</div>
 
 </div>
 
 </summary>
 
 
-<div class="popup">
+<div class="details-content">
 
-<div class="popup-inner">
+<div class="details-line"></div>
 
-<div class="popup-title">
+<div class="details-title">
 Dining Collection
 </div>
 
-<div class="popup-text">
+<p class="details-description">
 Bring family and friends together around a beautiful dining space.
-</div>
+</p>
 
+<div class="product-list">
 
-<div class="popup-item">
+<div class="product">
 <strong>Dining Tables</strong>
 <span>Tables designed for family meals and gatherings.</span>
 </div>
 
-<div class="popup-item">
+<div class="product">
 <strong>Dining Chairs</strong>
 <span>Comfortable seating for your dining area.</span>
 </div>
 
-<div class="popup-item">
+<div class="product">
 <strong>Dining Sets</strong>
 <span>Complete dining solutions for your home.</span>
 </div>
 
+</div>
+
+<div class="close-note">
+Tap the card again to close.
 </div>
 
 </div>
@@ -574,16 +852,76 @@ Bring family and friends together around a beautiful dining space.
 
 
 
-<!-- STORE -->
+<!-- ================= STORE ================= -->
 
 <details class="card">
 
 <summary>
 
-<img
-class="card-image"
-src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=900&q=85"
-alt="Furniture showroom">
+<div class="card-image">
+
+<svg viewBox="0 0 600 300"
+xmlns="http://www.w3.org/2000/svg">
+
+<rect width="600" height="300" fill="#292119"/>
+
+<rect x="70" y="85"
+width="460"
+height="160"
+rx="8"
+fill="#765337"/>
+
+<rect x="70" y="85"
+width="460"
+height="35"
+fill="#d8b57c"/>
+
+<rect x="110" y="135"
+width="115"
+height="105"
+fill="#33271d"/>
+
+<rect x="250" y="135"
+width="115"
+height="105"
+fill="#33271d"/>
+
+<rect x="390" y="135"
+width="100"
+height="105"
+fill="#33271d"/>
+
+<rect x="125" y="150"
+width="85"
+height="40"
+rx="10"
+fill="#a97c50"/>
+
+<rect x="265" y="150"
+width="85"
+height="40"
+rx="10"
+fill="#9c7047"/>
+
+<rect x="405" y="150"
+width="70"
+height="40"
+rx="10"
+fill="#b4885b"/>
+
+<text x="300"
+y="70"
+text-anchor="middle"
+fill="#f5e8d2"
+font-size="25"
+font-family="Arial"
+font-weight="bold">
+STAR FURNITURE
+</text>
+
+</svg>
+
+</div>
 
 <div class="card-content">
 
@@ -591,51 +929,52 @@ alt="Furniture showroom">
 04 • STORE
 </div>
 
-<div>
-
 <h3>
 Visit Star Furniture
 </h3>
 
-<p>
+<p class="card-description">
 Harihar, Karnataka.
 </p>
-
-</div>
 
 </div>
 
 </summary>
 
 
-<div class="popup">
+<div class="details-content">
 
-<div class="popup-inner">
+<div class="details-line"></div>
 
-<div class="popup-title">
+<div class="details-title">
 Visit Our Store
 </div>
 
-<div class="popup-text">
+<p class="details-description">
 Visit Star Furniture and explore furniture for your home.
-</div>
+</p>
 
+<div class="product-list">
 
-<div class="popup-item">
+<div class="product">
 <strong>Location</strong>
 <span>PB Road, Harihar, Karnataka</span>
 </div>
 
-<div class="popup-item">
+<div class="product">
 <strong>Phone</strong>
 <span>+91 83102 83157</span>
 </div>
 
-<div class="popup-item">
+<div class="product">
 <strong>Showroom</strong>
 <span>Contact us for current showroom timings.</span>
 </div>
 
+</div>
+
+<div class="close-note">
+Tap the card again to close.
 </div>
 
 </div>
@@ -649,11 +988,11 @@ Visit Star Furniture and explore furniture for your home.
 
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
 <div class="contact">
 
-<div class="section-label">
+<div class="contact-label">
 STAR FURNITURE
 </div>
 
@@ -665,17 +1004,25 @@ Let's furnish your space.
 PB Road, Harihar, Karnataka
 </p>
 
+<div class="buttons">
+
 <a
-class="btn"
+class="button"
 href="tel:+918310283157">
 Call Store
 </a>
 
+<a
+class="button light"
+href="https://wa.me/918310283157">
+WhatsApp
+</a>
+
+</div>
+
 </div>
 
 
-
-<!-- FOOTER -->
 
 <footer>
 
