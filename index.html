@@ -3,17 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Star Furniture | Harihar</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 
 body{
-font-family:Arial,sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 background:#11100f;
 color:#f7f2ea;
 line-height:1.5;
 }
+
+/* HERO */
 
 .hero{
 min-height:100vh;
@@ -21,13 +29,21 @@ padding:25px 20px;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
-background:radial-gradient(circle at 80% 20%,#73573c 0,#332517 25%,#11100f 65%);
+
+background:
+radial-gradient(
+circle at 80% 20%,
+#765a3d 0%,
+#39291b 25%,
+#11100f 68%
+);
 }
 
 .nav{
 display:flex;
 justify-content:space-between;
 align-items:flex-start;
+gap:20px;
 }
 
 .logo{
@@ -38,8 +54,9 @@ letter-spacing:2px;
 
 .location{
 color:#d7c6ad;
-font-size:15px;
+font-size:14px;
 margin-top:8px;
+text-align:right;
 }
 
 .eyebrow{
@@ -47,11 +64,11 @@ color:#d8b57c;
 text-transform:uppercase;
 letter-spacing:4px;
 font-size:13px;
-margin-bottom:25px;
+margin-bottom:24px;
 }
 
 h1{
-font-size:58px;
+font-size:56px;
 line-height:.98;
 margin-bottom:25px;
 }
@@ -61,6 +78,8 @@ color:#c9c2ba;
 font-size:18px;
 max-width:520px;
 }
+
+/* COLLECTION */
 
 section{
 padding:70px 20px;
@@ -85,74 +104,107 @@ grid-template-columns:1fr 1fr;
 gap:18px;
 }
 
+/* CARDS */
+
 .card{
 display:block;
-min-height:250px;
-padding:28px;
-border:1px solid #3b352d;
-border-radius:30px;
 background:#211d18;
+border:1px solid #3b352d;
+border-radius:28px;
+overflow:hidden;
 cursor:pointer;
+transition:.25s;
+}
+
+.card:hover{
+border-color:#d8b57c;
 }
 
 .card summary{
 list-style:none;
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-min-height:194px;
+display:block;
+cursor:pointer;
 }
 
 .card summary::-webkit-details-marker{
 display:none;
 }
 
+.card-image{
+width:100%;
+height:180px;
+object-fit:cover;
+display:block;
+}
+
+.card-content{
+padding:22px;
+min-height:190px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
 .number{
 color:#968b7e;
-font-size:15px;
+font-size:14px;
+letter-spacing:1px;
 }
 
 .card h3{
-font-size:25px;
-margin-bottom:8px;
+font-size:24px;
+margin:10px 0 7px;
 }
 
 .card p{
 color:#968e86;
-font-size:17px;
+font-size:16px;
 }
 
-.card[open]{
-background:#30271e;
-border-color:#d8b57c;
-}
+/* OPEN CONTENT */
 
 .popup{
-margin-top:22px;
-padding-top:20px;
-border-top:1px solid #4b4034;
+padding:0 22px 25px;
 }
 
-.popup p{
+.popup-inner{
+border-top:1px solid #40382f;
+padding-top:20px;
+}
+
+.popup-title{
+color:#d8b57c;
+font-size:14px;
+text-transform:uppercase;
+letter-spacing:2px;
+margin-bottom:15px;
+}
+
+.popup-text{
 color:#c9c0b6;
+font-size:16px;
 margin-bottom:15px;
 }
 
 .popup-item{
-padding:12px 0;
-border-bottom:1px solid #40382f;
+background:#302a23;
+padding:15px;
+border-radius:15px;
+margin-top:10px;
 }
 
 .popup-item strong{
 display:block;
-color:#f7f2ea;
+font-size:17px;
+margin-bottom:3px;
 }
 
 .popup-item span{
 color:#a59d94;
 font-size:14px;
 }
+
+/* CONTACT */
 
 .contact{
 margin:0 20px 40px;
@@ -168,6 +220,7 @@ color:#a17c46;
 
 .contact h2{
 font-size:40px;
+margin-bottom:20px;
 }
 
 .contact p{
@@ -179,11 +232,13 @@ margin-bottom:25px;
 display:inline-block;
 background:#17130f;
 color:white;
-padding:15px 24px;
+padding:15px 25px;
 border-radius:30px;
 font-size:16px;
 text-decoration:none;
 }
+
+/* FOOTER */
 
 footer{
 text-align:center;
@@ -192,33 +247,89 @@ color:#77716b;
 font-size:14px;
 }
 
+/* MOBILE */
+
 @media(max-width:500px){
-h1{font-size:50px}
-h2{font-size:36px}
-.card{padding:22px}
-.card h3{font-size:22px}
+
+h1{
+font-size:50px;
 }
 
-@media(min-width:700px){
-.hero{padding:40px 70px}
-section{padding:90px 70px}
-.grid{grid-template-columns:repeat(4,1fr)}
-.contact{margin:0 70px 50px}
+h2{
+font-size:36px;
 }
+
+.card-image{
+height:155px;
+}
+
+.card-content{
+min-height:180px;
+padding:20px;
+}
+
+.card h3{
+font-size:21px;
+}
+
+.location{
+font-size:12px;
+}
+
+}
+
+/* DESKTOP */
+
+@media(min-width:700px){
+
+.hero{
+padding:40px 70px;
+}
+
+section{
+padding:90px 70px;
+}
+
+.grid{
+grid-template-columns:repeat(4,1fr);
+}
+
+.contact{
+margin:0 70px 50px;
+}
+
+}
+
 </style>
 </head>
 
+
 <body>
+
+
+<!-- HERO -->
 
 <div class="hero">
 
 <div class="nav">
-<div class="logo">★ STAR<br>FURNITURE</div>
-<div class="location">HARIHAR • KARNATAKA</div>
+
+<div class="logo">
+★ STAR<br>
+FURNITURE
 </div>
 
+<div class="location">
+HARIHAR • KARNATAKA
+</div>
+
+</div>
+
+
 <div>
-<div class="eyebrow">Furniture that feels like home</div>
+
+<div class="eyebrow">
+Furniture that feels like home
+</div>
 
 <h1>
 Beautiful<br>
@@ -230,120 +341,285 @@ Made for living.
 Discover furniture designed to bring comfort,
 character and style into every room.
 </p>
-</div>
 
 </div>
 
+</div>
+
+
+
+<!-- COLLECTIONS -->
 
 <section>
 
-<div class="section-label">Collections</div>
+<div class="section-label">
+Collections
+</div>
 
-<h2>Find your style</h2>
+<h2>
+Find your style
+</h2>
+
 
 <div class="grid">
 
+
+<!-- LIVING -->
+
 <details class="card">
+
 <summary>
-<div class="number">01 • LIVING</div>
-<div>
-<h3>Sofas & Seating</h3>
-<p>Comfort-first pieces.</p>
+
+<img
+class="card-image"
+src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=85"
+alt="Modern sofa living room">
+
+<div class="card-content">
+
+<div class="number">
+01 • LIVING
 </div>
+
+<div>
+
+<h3>
+Sofas & Seating
+</h3>
+
+<p>
+Comfort-first pieces.
+</p>
+
+</div>
+
+</div>
+
 </summary>
 
+
 <div class="popup">
-<p>Create a comfortable and stylish living space.</p>
+
+<div class="popup-inner">
+
+<div class="popup-title">
+Living Collection
+</div>
+
+<div class="popup-text">
+Create a comfortable and stylish living room for your family and guests.
+</div>
+
 
 <div class="popup-item">
 <strong>Sofas</strong>
-<span>Comfortable seating for your home.</span>
+<span>Comfortable seating for everyday living.</span>
 </div>
 
 <div class="popup-item">
 <strong>Sofa Sets</strong>
-<span>Complete living-room combinations.</span>
+<span>Complete seating combinations for modern homes.</span>
 </div>
 
 <div class="popup-item">
 <strong>Centre Tables</strong>
-<span>Elegant tables for modern spaces.</span>
+<span>Elegant tables to complete your living space.</span>
 </div>
+
 </div>
+
+</div>
+
 </details>
 
 
+
+<!-- BEDROOM -->
+
 <details class="card">
+
 <summary>
-<div class="number">02 • BEDROOM</div>
-<div>
-<h3>Beds & Storage</h3>
-<p>Comfortable everyday living.</p>
+
+<img
+class="card-image"
+src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=85"
+alt="Modern bedroom furniture">
+
+<div class="card-content">
+
+<div class="number">
+02 • BEDROOM
 </div>
+
+<div>
+
+<h3>
+Beds & Storage
+</h3>
+
+<p>
+Comfortable everyday living.
+</p>
+
+</div>
+
+</div>
+
 </summary>
 
+
 <div class="popup">
-<p>Furniture designed for a comfortable bedroom.</p>
+
+<div class="popup-inner">
+
+<div class="popup-title">
+Bedroom Collection
+</div>
+
+<div class="popup-text">
+Beautiful bedroom furniture designed for comfort, organization and style.
+</div>
+
 
 <div class="popup-item">
 <strong>Beds</strong>
-<span>Strong and stylish bedroom beds.</span>
+<span>Strong and stylish beds for modern bedrooms.</span>
 </div>
 
 <div class="popup-item">
 <strong>Wardrobes</strong>
-<span>Smart storage for everyday use.</span>
+<span>Practical storage for clothes and belongings.</span>
 </div>
 
 <div class="popup-item">
 <strong>Bedside Tables</strong>
-<span>Useful storage beside your bed.</span>
+<span>Compact and useful storage beside your bed.</span>
 </div>
+
 </div>
+
+</div>
+
 </details>
 
 
+
+<!-- DINING -->
+
 <details class="card">
+
 <summary>
-<div class="number">03 • DINING</div>
-<div>
-<h3>Tables & Chairs</h3>
-<p>Made for family time.</p>
+
+<img
+class="card-image"
+src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=900&q=85"
+alt="Modern dining table and chairs">
+
+<div class="card-content">
+
+<div class="number">
+03 • DINING
 </div>
+
+<div>
+
+<h3>
+Tables & Chairs
+</h3>
+
+<p>
+Made for family time.
+</p>
+
+</div>
+
+</div>
+
 </summary>
 
+
 <div class="popup">
-<p>Bring family and friends together around the table.</p>
+
+<div class="popup-inner">
+
+<div class="popup-title">
+Dining Collection
+</div>
+
+<div class="popup-text">
+Bring family and friends together around a beautiful dining space.
+</div>
+
 
 <div class="popup-item">
 <strong>Dining Tables</strong>
-<span>Tables for family dining.</span>
+<span>Tables designed for family meals and gatherings.</span>
 </div>
 
 <div class="popup-item">
 <strong>Dining Chairs</strong>
-<span>Comfortable seating.</span>
+<span>Comfortable seating for your dining area.</span>
 </div>
 
 <div class="popup-item">
 <strong>Dining Sets</strong>
-<span>Complete dining solutions.</span>
+<span>Complete dining solutions for your home.</span>
 </div>
+
 </div>
+
+</div>
+
 </details>
 
 
+
+<!-- STORE -->
+
 <details class="card">
+
 <summary>
-<div class="number">04 • STORE</div>
-<div>
-<h3>Visit Star Furniture</h3>
-<p>Harihar, Karnataka.</p>
+
+<img
+class="card-image"
+src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=900&q=85"
+alt="Furniture showroom">
+
+<div class="card-content">
+
+<div class="number">
+04 • STORE
 </div>
+
+<div>
+
+<h3>
+Visit Star Furniture
+</h3>
+
+<p>
+Harihar, Karnataka.
+</p>
+
+</div>
+
+</div>
+
 </summary>
 
+
 <div class="popup">
-<p>Visit our store and explore furniture for your home.</p>
+
+<div class="popup-inner">
+
+<div class="popup-title">
+Visit Our Store
+</div>
+
+<div class="popup-text">
+Visit Star Furniture and explore furniture for your home.
+</div>
+
 
 <div class="popup-item">
 <strong>Location</strong>
@@ -357,33 +633,56 @@ character and style into every room.
 
 <div class="popup-item">
 <strong>Showroom</strong>
-<span>Contact us for current timings.</span>
+<span>Contact us for current showroom timings.</span>
 </div>
-</div>
-</details>
 
 </div>
+
+</div>
+
+</details>
+
+
+</div>
+
 </section>
 
 
+
+<!-- CONTACT -->
+
 <div class="contact">
 
-<div class="section-label">STAR FURNITURE</div>
+<div class="section-label">
+STAR FURNITURE
+</div>
 
-<h2>Let's furnish your space.</h2>
+<h2>
+Let's furnish your space.
+</h2>
 
-<p>PB Road, Harihar, Karnataka</p>
+<p>
+PB Road, Harihar, Karnataka
+</p>
 
-<a class="btn" href="tel:+918310283157">
+<a
+class="btn"
+href="tel:+918310283157">
 Call Store
 </a>
 
 </div>
 
 
+
+<!-- FOOTER -->
+
 <footer>
+
 © 2026 Star Furniture • Harihar, Karnataka
+
 </footer>
+
 
 </body>
 </html>
