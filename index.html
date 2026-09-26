@@ -1,1035 +1,780 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Star Furniture | Harihar</title>
 
 <style>
-
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
-
-html{
-scroll-behavior:smooth;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#11100f;
-color:#f7f2ea;
-line-height:1.5;
+  background:#10100f;
+  color:#f5f0e8;
+  font-family:Arial,Helvetica,sans-serif;
+  overflow-x:hidden;
 }
 
-/* ================= HERO ================= */
-
-.hero{
-padding:24px 20px 55px;
-background:
-radial-gradient(circle at 85% 15%,#765a3d 0%,#3a291b 25%,#11100f 62%);
+.page{
+  max-width:1100px;
+  margin:auto;
 }
 
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:flex-start;
-gap:15px;
+/* HEADER */
+header{
+  padding:28px 22px 10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
 }
 
 .logo{
-font-size:28px;
-font-weight:800;
-line-height:1.05;
-letter-spacing:2px;
+  font-size:30px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.logo span{
+  display:block;
+  margin-top:8px;
 }
 
 .location{
-font-size:13px;
-color:#d8c8b2;
-text-align:right;
-margin-top:5px;
+  color:#c9b79a;
+  font-size:14px;
+  margin-top:8px;
+  text-align:right;
 }
 
-.hero-content{
-margin-top:65px;
+/* HERO */
+.hero{
+  margin:10px 18px 35px;
+  min-height:560px;
+  border-radius:0 0 38px 38px;
+  overflow:hidden;
+  position:relative;
+  background:
+    radial-gradient(circle at 70% 30%,#725335 0%,#342417 28%,#17130f 70%);
+  border-bottom:1px solid #80643c;
 }
 
-.eyebrow{
-color:#d8b57c;
-font-size:12px;
-letter-spacing:4px;
-text-transform:uppercase;
-margin-bottom:18px;
+.hero-furniture{
+  height:260px;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+}
+
+/* SOFA VISUAL */
+.sofa{
+  width:300px;
+  height:130px;
+  position:relative;
+  margin-bottom:15px;
+}
+
+.sofa-seat{
+  position:absolute;
+  left:35px;
+  bottom:25px;
+  width:230px;
+  height:58px;
+  background:linear-gradient(#9b7048,#67482f);
+  border-radius:18px 18px 12px 12px;
+  box-shadow:0 15px 25px #0008;
+}
+
+.sofa-back{
+  position:absolute;
+  left:45px;
+  top:25px;
+  width:210px;
+  height:75px;
+  background:linear-gradient(135deg,#b18559,#63442c);
+  border-radius:22px 22px 10px 10px;
+}
+
+.arm-left,
+.arm-right{
+  position:absolute;
+  bottom:30px;
+  width:45px;
+  height:75px;
+  background:#765335;
+  border-radius:18px;
+}
+
+.arm-left{left:20px;}
+.arm-right{right:20px;}
+
+.leg{
+  position:absolute;
+  bottom:5px;
+  width:10px;
+  height:28px;
+  background:#2d2118;
+  border-radius:4px;
+}
+
+.leg.one{left:55px;}
+.leg.two{right:55px;}
+
+.hero-text{
+  position:absolute;
+  bottom:38px;
+  left:20px;
+  right:20px;
+}
+
+.kicker{
+  color:#c9a76c;
+  font-size:13px;
+  letter-spacing:5px;
+  margin-bottom:22px;
 }
 
 h1{
-font-size:48px;
-line-height:.98;
-letter-spacing:-1px;
-margin-bottom:22px;
+  font-size:54px;
+  line-height:.98;
+  letter-spacing:-2px;
+  max-width:600px;
 }
 
-.hero-text{
-color:#c9c2ba;
-font-size:17px;
-max-width:500px;
+.hero-description{
+  color:#aaa39a;
+  font-size:18px;
+  line-height:1.5;
+  margin-top:24px;
+  max-width:550px;
 }
 
-/* HERO VISUAL */
-
-.hero-visual{
-margin-top:35px;
-height:260px;
-border-radius:30px;
-overflow:hidden;
-border:1px solid #514333;
-background:#211b16;
+/* COLLECTION */
+.section{
+  padding:10px 18px 45px;
 }
 
-.hero-visual svg{
-width:100%;
-height:100%;
-display:block;
+.section-title{
+  font-size:13px;
+  color:#bda77f;
+  letter-spacing:4px;
+  margin-bottom:20px;
 }
 
-/* ================= COLLECTION ================= */
-
-section{
-padding:65px 20px;
+.cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
 }
-
-.section-label{
-color:#d8b57c;
-font-size:12px;
-letter-spacing:4px;
-text-transform:uppercase;
-margin-bottom:15px;
-}
-
-h2{
-font-size:38px;
-line-height:1.05;
-margin-bottom:30px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:14px;
-}
-
-/* ================= CARDS ================= */
 
 .card{
-background:#211d18;
-border:1px solid #3b352d;
-border-radius:26px;
-overflow:hidden;
-transition:.25s;
+  min-height:310px;
+  border:1px solid #37332c;
+  border-radius:32px;
+  background:#211f1a;
+  overflow:hidden;
+  transition:.3s;
+  position:relative;
 }
 
-.card[open]{
-grid-column:1 / -1;
-border-color:#d8b57c;
-background:#292219;
+.card:hover{
+  border-color:#a98a59;
+  transform:translateY(-3px);
 }
 
-.card summary{
-list-style:none;
-cursor:pointer;
+.card-top{
+  height:150px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    radial-gradient(circle,#62482f,#252018 65%);
+  position:relative;
 }
 
-.card summary::-webkit-details-marker{
-display:none;
+/* CARD FURNITURE */
+.mini-sofa{
+  width:130px;
+  height:65px;
+  position:relative;
 }
 
-.card-image{
-height:155px;
-width:100%;
-display:block;
-background:#30271f;
+.mini-sofa .seat{
+  position:absolute;
+  bottom:8px;
+  left:15px;
+  width:100px;
+  height:30px;
+  background:#9a7048;
+  border-radius:10px;
 }
 
-.card-image svg{
-width:100%;
-height:100%;
-display:block;
+.mini-sofa .back{
+  position:absolute;
+  left:20px;
+  top:8px;
+  width:90px;
+  height:40px;
+  background:#704e32;
+  border-radius:12px;
+}
+
+.mini-sofa .arm{
+  position:absolute;
+  bottom:10px;
+  width:20px;
+  height:42px;
+  background:#604329;
+  border-radius:8px;
+}
+
+.mini-sofa .a1{left:8px;}
+.mini-sofa .a2{right:8px;}
+
+.bed{
+  width:145px;
+  height:90px;
+  position:relative;
+}
+
+.bed .head{
+  position:absolute;
+  left:10px;
+  top:5px;
+  width:25px;
+  height:72px;
+  background:#8b6746;
+  border-radius:8px;
+}
+
+.bed .mattress{
+  position:absolute;
+  left:30px;
+  top:30px;
+  width:105px;
+  height:45px;
+  background:#c7b08e;
+  border-radius:8px;
+}
+
+.bed .pillow{
+  position:absolute;
+  left:38px;
+  top:36px;
+  width:35px;
+  height:20px;
+  background:#eee4d3;
+  border-radius:6px;
+}
+
+.table{
+  width:130px;
+  height:100px;
+  position:relative;
+}
+
+.table .top{
+  position:absolute;
+  top:20px;
+  left:15px;
+  width:100px;
+  height:20px;
+  background:#9a7048;
+  border-radius:5px;
+}
+
+.table .leg1,
+.table .leg2{
+  position:absolute;
+  top:38px;
+  width:10px;
+  height:55px;
+  background:#604329;
+}
+
+.table .leg1{left:30px;}
+.table .leg2{right:30px;}
+
+.chair{
+  position:absolute;
+  width:35px;
+  height:55px;
+  border:8px solid #795637;
+  border-bottom:0;
+  bottom:15px;
+  border-radius:8px 8px 0 0;
+}
+
+.chair.one{left:5px;}
+.chair.two{right:5px;}
+
+.showroom{
+  width:160px;
+  height:110px;
+  position:relative;
+}
+
+.showroom .wall{
+  position:absolute;
+  left:15px;
+  top:10px;
+  width:130px;
+  height:75px;
+  background:#705238;
+  border-radius:5px;
+}
+
+.showroom .window{
+  position:absolute;
+  left:30px;
+  top:22px;
+  width:42px;
+  height:42px;
+  background:#c8aa76;
+  border:4px solid #33261b;
+}
+
+.showroom .cabinet{
+  position:absolute;
+  right:27px;
+  top:35px;
+  width:48px;
+  height:45px;
+  background:#4b3524;
+  border:3px solid #9b754b;
+}
+
+.showroom .floor{
+  position:absolute;
+  bottom:8px;
+  left:5px;
+  width:150px;
+  height:18px;
+  background:#684b30;
 }
 
 .card-content{
-padding:20px;
+  padding:22px;
 }
 
 .number{
-font-size:13px;
-color:#968b7e;
-letter-spacing:1px;
+  font-size:12px;
+  color:#9f9689;
+  letter-spacing:2px;
+  margin-bottom:22px;
 }
 
-.card h3{
-font-size:21px;
-line-height:1.15;
-margin:12px 0 7px;
+.card h2{
+  font-size:23px;
+  line-height:1.2;
 }
 
-.card-description{
-color:#a59d94;
-font-size:15px;
+.card p{
+  margin-top:14px;
+  color:#a9a299;
+  font-size:15px;
+  line-height:1.5;
 }
 
-/* ================= OPEN DETAILS ================= */
-
-.details-content{
-padding:0 20px 24px;
-}
-
-.details-line{
-height:1px;
-background:#494035;
-margin-bottom:20px;
-}
-
-.details-title{
-color:#d8b57c;
-font-size:12px;
-letter-spacing:3px;
-text-transform:uppercase;
-margin-bottom:12px;
-}
-
-.details-description{
-color:#cbc2b7;
-font-size:16px;
-margin-bottom:18px;
-}
-
-.product-list{
-display:grid;
-gap:10px;
-}
-
-.product{
-background:#332b23;
-border-radius:16px;
-padding:14px 16px;
-}
-
-.product strong{
-display:block;
-font-size:16px;
-margin-bottom:3px;
-}
-
-.product span{
-color:#aaa197;
-font-size:14px;
-}
-
-.close-note{
-margin-top:18px;
-color:#8f877e;
-font-size:12px;
-}
-
-/* ================= CONTACT ================= */
-
+/* CONTACT */
 .contact{
-margin:10px 20px 45px;
-padding:38px 26px;
-border-radius:32px;
-background:#e5c38e;
-color:#16120e;
+  margin:5px 18px 30px;
+  padding:30px 24px;
+  border-radius:30px;
+  background:#e8ddca;
+  color:#171410;
 }
 
-.contact-label{
-color:#9d7844;
-font-size:12px;
-letter-spacing:4px;
-margin-bottom:15px;
+.contact small{
+  color:#7c6a50;
+  letter-spacing:3px;
 }
 
 .contact h2{
-font-size:38px;
-margin-bottom:18px;
+  font-size:32px;
+  margin:12px 0;
 }
 
 .contact p{
-font-size:18px;
-margin-bottom:22px;
+  color:#62594e;
+  line-height:1.5;
+  margin-bottom:22px;
 }
 
 .buttons{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
 }
 
-.button{
-display:inline-block;
-text-decoration:none;
-background:#17130f;
-color:white;
-padding:14px 22px;
-border-radius:30px;
-font-size:15px;
+.btn{
+  text-decoration:none;
+  padding:15px 20px;
+  border-radius:30px;
+  font-weight:bold;
+  display:inline-block;
 }
 
-.button.light{
-background:#f4dfb8;
-color:#17130f;
-border:1px solid #b99761;
+.call{
+  background:#171410;
+  color:white;
 }
 
-/* ================= FOOTER ================= */
+.whatsapp{
+  background:#705333;
+  color:white;
+}
 
+/* FOOTER */
 footer{
-text-align:center;
-padding:30px 20px 40px;
-color:#77716b;
-font-size:13px;
+  text-align:center;
+  padding:10px 20px 35px;
+  color:#777067;
+  font-size:12px;
 }
 
-/* ================= DESKTOP ================= */
+/* MOBILE */
+@media(max-width:600px){
 
-@media(min-width:700px){
+  header{
+    padding:25px 20px 5px;
+  }
 
-.hero{
-padding:40px 70px 70px;
+  .logo{
+    font-size:29px;
+  }
+
+  .location{
+    font-size:12px;
+  }
+
+  .hero{
+    min-height:535px;
+    margin:10px 15px 35px;
+  }
+
+  .hero-furniture{
+    height:235px;
+  }
+
+  .sofa{
+    transform:scale(.9);
+  }
+
+  h1{
+    font-size:50px;
+  }
+
+  .hero-description{
+    font-size:16px;
+  }
+
+  .cards{
+    gap:12px;
+  }
+
+  .card{
+    min-height:300px;
+    border-radius:28px;
+  }
+
+  .card-top{
+    height:145px;
+  }
+
+  .card-content{
+    padding:18px;
+  }
+
+  .card h2{
+    font-size:21px;
+  }
+
+  .card p{
+    font-size:14px;
+  }
 }
 
-.hero-content{
-margin-top:80px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
+@media(max-width:390px){
 
-.hero-visual{
-margin-top:0;
-height:360px;
-}
+  h1{
+    font-size:44px;
+  }
 
-h1{
-font-size:72px;
-}
+  .logo{
+    font-size:25px;
+  }
 
-section{
-padding:90px 70px;
+  .location{
+    font-size:11px;
+  }
 }
-
-.grid{
-grid-template-columns:repeat(4,1fr);
-}
-
-.card[open]{
-grid-column:1 / -1;
-}
-
-.contact{
-margin-left:70px;
-margin-right:70px;
-}
-
-}
-
 </style>
-
 </head>
-
 
 <body>
 
+<div class="page">
 
-<!-- ================= HERO ================= -->
+<header>
+  <div class="logo">
+    ★ STAR
+    <span>FURNITURE</span>
+  </div>
 
-<header class="hero">
-
-<div class="nav">
-
-<div class="logo">
-★ STAR<br>
-FURNITURE
-</div>
-
-<div class="location">
-HARIHAR • KARNATAKA
-</div>
-
-</div>
-
-
-<div class="hero-content">
-
-<div>
-
-<div class="eyebrow">
-Furniture that feels like home
-</div>
-
-<h1>
-Beautiful<br>
-Spaces.<br>
-Made for living.
-</h1>
-
-<p class="hero-text">
-Discover furniture designed to bring comfort,
-character and style into every room.
-</p>
-
-</div>
-
-
-<!-- HERO FURNITURE ILLUSTRATION -->
-
-<div class="hero-visual">
-
-<svg viewBox="0 0 600 400"
-xmlns="http://www.w3.org/2000/svg">
-
-<rect width="600" height="400" fill="#241c15"/>
-
-<circle cx="470" cy="90"
-r="85"
-fill="#765a3d"
-opacity=".45"/>
-
-<rect x="70" y="245"
-width="360"
-height="70"
-rx="20"
-fill="#8b6847"/>
-
-<rect x="90" y="185"
-width="310"
-height="85"
-rx="28"
-fill="#9c7751"/>
-
-<rect x="105" y="155"
-width="95"
-height="100"
-rx="28"
-fill="#aa8358"/>
-
-<rect x="300" y="155"
-width="95"
-height="100"
-rx="28"
-fill="#aa8358"/>
-
-<rect x="110" y="310"
-width="18"
-height="55"
-fill="#5d432e"/>
-
-<rect x="375" y="310"
-width="18"
-height="55"
-fill="#5d432e"/>
-
-<circle cx="475" cy="260"
-r="48"
-fill="#3e3329"/>
-
-<rect x="430" y="265"
-width="90"
-height="55"
-rx="10"
-fill="#594532"/>
-
-<path d="M475 260 C455 205 465 150 490 115"
-stroke="#68734d"
-stroke-width="8"
-fill="none"/>
-
-<ellipse cx="455" cy="175"
-rx="38"
-ry="18"
-fill="#718052"
-transform="rotate(-30 455 175)"/>
-
-<ellipse cx="500" cy="145"
-rx="40"
-ry="18"
-fill="#718052"
-transform="rotate(25 500 145)"/>
-
-<ellipse cx="475" cy="125"
-rx="38"
-ry="17"
-fill="#7d8d5b"
-transform="rotate(-5 475 125)"/>
-
-</svg>
-
-</div>
-
-</div>
-
+  <div class="location">
+    HARIHAR · KARNATAKA
+  </div>
 </header>
 
 
+<section class="hero">
 
-<!-- ================= COLLECTIONS ================= -->
+  <div class="hero-furniture">
 
-<section>
+    <div class="sofa">
 
-<div class="section-label">
-Collections
-</div>
+      <div class="sofa-back"></div>
 
-<h2>
-Find your style
-</h2>
+      <div class="sofa-seat"></div>
 
+      <div class="arm-left"></div>
+      <div class="arm-right"></div>
 
-<div class="grid">
+      <div class="leg one"></div>
+      <div class="leg two"></div>
 
+    </div>
 
-<!-- ================= LIVING ================= -->
+  </div>
 
-<details class="card">
 
-<summary>
+  <div class="hero-text">
 
-<div class="card-image">
+    <div class="kicker">
+      FURNITURE THAT FEELS LIKE HOME
+    </div>
 
-<svg viewBox="0 0 600 300"
-xmlns="http://www.w3.org/2000/svg">
+    <h1>
+      Beautiful Spaces.<br>
+      Made for Living.
+    </h1>
 
-<rect width="600" height="300" fill="#2b2118"/>
+    <p class="hero-description">
+      Discover furniture designed to bring comfort,
+      character and style into every room.
+    </p>
 
-<rect x="80" y="155"
-width="350"
-height="65"
-rx="20"
-fill="#a77d52"/>
-
-<rect x="105" y="105"
-width="300"
-height="80"
-rx="25"
-fill="#b88b5b"/>
-
-<rect x="115" y="85"
-width="85" height="90"
-rx="22"
-fill="#c09665"/>
-
-<rect x="310" y="85"
-width="85" height="90"
-rx="22"
-fill="#c09665"/>
-
-<rect x="110" y="215"
-width="18" height="45"
-fill="#65472f"/>
-
-<rect x="390" y="215"
-width="18" height="45"
-fill="#65472f"/>
-
-<circle cx="485" cy="180"
-r="35"
-fill="#54412e"/>
-
-<rect x="450" y="195"
-width="70"
-height="40"
-rx="8"
-fill="#765638"/>
-
-</svg>
-
-</div>
-
-<div class="card-content">
-
-<div class="number">
-01 • LIVING
-</div>
-
-<h3>
-Sofas & Seating
-</h3>
-
-<p class="card-description">
-Comfort-first pieces.
-</p>
-
-</div>
-
-</summary>
-
-
-<div class="details-content">
-
-<div class="details-line"></div>
-
-<div class="details-title">
-Living Collection
-</div>
-
-<p class="details-description">
-Create a comfortable and stylish living room for your family and guests.
-</p>
-
-<div class="product-list">
-
-<div class="product">
-<strong>Sofas</strong>
-<span>Comfortable seating for everyday living.</span>
-</div>
-
-<div class="product">
-<strong>Sofa Sets</strong>
-<span>Complete seating combinations for modern homes.</span>
-</div>
-
-<div class="product">
-<strong>Centre Tables</strong>
-<span>Elegant tables to complete your living space.</span>
-</div>
-
-</div>
-
-<div class="close-note">
-Tap the card again to close.
-</div>
-
-</div>
-
-</details>
-
-
-
-<!-- ================= BEDROOM ================= -->
-
-<details class="card">
-
-<summary>
-
-<div class="card-image">
-
-<svg viewBox="0 0 600 300"
-xmlns="http://www.w3.org/2000/svg">
-
-<rect width="600" height="300" fill="#28201b"/>
-
-<rect x="80" y="100"
-width="440"
-height="120"
-rx="18"
-fill="#654b37"/>
-
-<rect x="105" y="135"
-width="390"
-height="105"
-rx="15"
-fill="#9b7758"/>
-
-<rect x="130" y="105"
-width="125"
-height="55"
-rx="15"
-fill="#d0b493"/>
-
-<rect x="275" y="105"
-width="125"
-height="55"
-rx="15"
-fill="#d0b493"/>
-
-<rect x="105" y="220"
-width="390"
-height="30"
-fill="#4d3929"/>
-
-<rect x="455" y="120"
-width="55"
-height="100"
-rx="8"
-fill="#735439"/>
-
-<circle cx="483"
-cy="145"
-r="8"
-fill="#d8b57c"/>
-
-</svg>
-
-</div>
-
-<div class="card-content">
-
-<div class="number">
-02 • BEDROOM
-</div>
-
-<h3>
-Beds & Storage
-</h3>
-
-<p class="card-description">
-Comfortable everyday living.
-</p>
-
-</div>
-
-</summary>
-
-
-<div class="details-content">
-
-<div class="details-line"></div>
-
-<div class="details-title">
-Bedroom Collection
-</div>
-
-<p class="details-description">
-Beautiful bedroom furniture designed for comfort, organization and style.
-</p>
-
-<div class="product-list">
-
-<div class="product">
-<strong>Beds</strong>
-<span>Strong and stylish beds for modern bedrooms.</span>
-</div>
-
-<div class="product">
-<strong>Wardrobes</strong>
-<span>Practical storage for clothes and belongings.</span>
-</div>
-
-<div class="product">
-<strong>Bedside Tables</strong>
-<span>Compact and useful storage beside your bed.</span>
-</div>
-
-</div>
-
-<div class="close-note">
-Tap the card again to close.
-</div>
-
-</div>
-
-</details>
-
-
-
-<!-- ================= DINING ================= -->
-
-<details class="card">
-
-<summary>
-
-<div class="card-image">
-
-<svg viewBox="0 0 600 300"
-xmlns="http://www.w3.org/2000/svg">
-
-<rect width="600" height="300" fill="#2b2118"/>
-
-<rect x="115" y="105"
-width="370"
-height="55"
-rx="12"
-fill="#a87c4d"/>
-
-<rect x="150" y="155"
-width="22"
-height="100"
-fill="#63462d"/>
-
-<rect x="430" y="155"
-width="22"
-height="100"
-fill="#63462d"/>
-
-<rect x="65" y="160"
-width="70"
-height="80"
-rx="12"
-fill="#896542"/>
-
-<rect x="465" y="160"
-width="70"
-height="80"
-rx="12"
-fill="#896542"/>
-
-<rect x="250" y="160"
-width="70"
-height="80"
-rx="12"
-fill="#765436"/>
-
-<circle cx="250" cy="90"
-r="12"
-fill="#d8b57c"/>
-
-<circle cx="300" cy="90"
-r="12"
-fill="#d8b57c"/>
-
-<circle cx="350" cy="90"
-r="12"
-fill="#d8b57c"/>
-
-</svg>
-
-</div>
-
-<div class="card-content">
-
-<div class="number">
-03 • DINING
-</div>
-
-<h3>
-Tables & Chairs
-</h3>
-
-<p class="card-description">
-Made for family time.
-</p>
-
-</div>
-
-</summary>
-
-
-<div class="details-content">
-
-<div class="details-line"></div>
-
-<div class="details-title">
-Dining Collection
-</div>
-
-<p class="details-description">
-Bring family and friends together around a beautiful dining space.
-</p>
-
-<div class="product-list">
-
-<div class="product">
-<strong>Dining Tables</strong>
-<span>Tables designed for family meals and gatherings.</span>
-</div>
-
-<div class="product">
-<strong>Dining Chairs</strong>
-<span>Comfortable seating for your dining area.</span>
-</div>
-
-<div class="product">
-<strong>Dining Sets</strong>
-<span>Complete dining solutions for your home.</span>
-</div>
-
-</div>
-
-<div class="close-note">
-Tap the card again to close.
-</div>
-
-</div>
-
-</details>
-
-
-
-<!-- ================= STORE ================= -->
-
-<details class="card">
-
-<summary>
-
-<div class="card-image">
-
-<svg viewBox="0 0 600 300"
-xmlns="http://www.w3.org/2000/svg">
-
-<rect width="600" height="300" fill="#292119"/>
-
-<rect x="70" y="85"
-width="460"
-height="160"
-rx="8"
-fill="#765337"/>
-
-<rect x="70" y="85"
-width="460"
-height="35"
-fill="#d8b57c"/>
-
-<rect x="110" y="135"
-width="115"
-height="105"
-fill="#33271d"/>
-
-<rect x="250" y="135"
-width="115"
-height="105"
-fill="#33271d"/>
-
-<rect x="390" y="135"
-width="100"
-height="105"
-fill="#33271d"/>
-
-<rect x="125" y="150"
-width="85"
-height="40"
-rx="10"
-fill="#a97c50"/>
-
-<rect x="265" y="150"
-width="85"
-height="40"
-rx="10"
-fill="#9c7047"/>
-
-<rect x="405" y="150"
-width="70"
-height="40"
-rx="10"
-fill="#b4885b"/>
-
-<text x="300"
-y="70"
-text-anchor="middle"
-fill="#f5e8d2"
-font-size="25"
-font-family="Arial"
-font-weight="bold">
-STAR FURNITURE
-</text>
-
-</svg>
-
-</div>
-
-<div class="card-content">
-
-<div class="number">
-04 • STORE
-</div>
-
-<h3>
-Visit Star Furniture
-</h3>
-
-<p class="card-description">
-Harihar, Karnataka.
-</p>
-
-</div>
-
-</summary>
-
-
-<div class="details-content">
-
-<div class="details-line"></div>
-
-<div class="details-title">
-Visit Our Store
-</div>
-
-<p class="details-description">
-Visit Star Furniture and explore furniture for your home.
-</p>
-
-<div class="product-list">
-
-<div class="product">
-<strong>Location</strong>
-<span>PB Road, Harihar, Karnataka</span>
-</div>
-
-<div class="product">
-<strong>Phone</strong>
-<span>+91 83102 83157</span>
-</div>
-
-<div class="product">
-<strong>Showroom</strong>
-<span>Contact us for current showroom timings.</span>
-</div>
-
-</div>
-
-<div class="close-note">
-Tap the card again to close.
-</div>
-
-</div>
-
-</details>
-
-
-</div>
+  </div>
 
 </section>
 
 
+<section class="section">
 
-<!-- ================= CONTACT ================= -->
+  <div class="section-title">
+    OUR COLLECTION
+  </div>
 
-<div class="contact">
+  <div class="cards">
 
-<div class="contact-label">
-STAR FURNITURE
-</div>
 
-<h2>
-Let's furnish your space.
-</h2>
+    <!-- LIVING -->
 
-<p>
-PB Road, Harihar, Karnataka
-</p>
+    <article class="card">
 
-<div class="buttons">
+      <div class="card-top">
 
-<a
-class="button"
-href="tel:+918310283157">
-Call Store
-</a>
+        <div class="mini-sofa">
 
-<a
-class="button light"
-href="https://wa.me/918310283157">
-WhatsApp
-</a>
+          <div class="back"></div>
+          <div class="seat"></div>
 
-</div>
+          <div class="arm a1"></div>
+          <div class="arm a2"></div>
 
-</div>
+        </div>
 
+      </div>
+
+      <div class="card-content">
+
+        <div class="number">
+          01 · LIVING
+        </div>
+
+        <h2>
+          Sofas & Seating
+        </h2>
+
+        <p>
+          Comfort-first pieces for beautiful living rooms.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- BEDROOM -->
+
+    <article class="card">
+
+      <div class="card-top">
+
+        <div class="bed">
+
+          <div class="head"></div>
+          <div class="mattress"></div>
+          <div class="pillow"></div>
+
+        </div>
+
+      </div>
+
+      <div class="card-content">
+
+        <div class="number">
+          02 · BEDROOM
+        </div>
+
+        <h2>
+          Beds & Storage
+        </h2>
+
+        <p>
+          Comfortable furniture for everyday living.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- DINING -->
+
+    <article class="card">
+
+      <div class="card-top">
+
+        <div class="table">
+
+          <div class="top"></div>
+          <div class="leg1"></div>
+          <div class="leg2"></div>
+
+          <div class="chair one"></div>
+          <div class="chair two"></div>
+
+        </div>
+
+      </div>
+
+      <div class="card-content">
+
+        <div class="number">
+          03 · DINING
+        </div>
+
+        <h2>
+          Tables & Chairs
+        </h2>
+
+        <p>
+          Made for family meals, conversations and memories.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- STORE -->
+
+    <article class="card">
+
+      <div class="card-top">
+
+        <div class="showroom">
+
+          <div class="wall"></div>
+          <div class="window"></div>
+          <div class="cabinet"></div>
+          <div class="floor"></div>
+
+        </div>
+
+      </div>
+
+      <div class="card-content">
+
+        <div class="number">
+          04 · STORE
+        </div>
+
+        <h2>
+          Visit Star Furniture
+        </h2>
+
+        <p>
+          Harihar, Karnataka. Come explore our collection.
+        </p>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+<section class="contact">
+
+  <small>
+    VISIT / CONTACT
+  </small>
+
+  <h2>
+    Let's furnish your space.
+  </h2>
+
+  <p>
+    Visit Star Furniture in Harihar or contact us
+    to explore furniture for your home.
+  </p>
+
+  <div class="buttons">
+
+    <a
+      class="btn call"
+      href="tel:+918310283157">
+      Call Star Furniture
+    </a>
+
+    <a
+      class="btn whatsapp"
+      href="https://wa.me/918310283157"
+      target="_blank">
+      WhatsApp
+    </a>
+
+  </div>
+
+</section>
 
 
 <footer>
-
-© 2026 Star Furniture • Harihar, Karnataka
-
+  STAR FURNITURE · HARIHAR · KARNATAKA
 </footer>
 
+</div>
 
 </body>
 </html>
