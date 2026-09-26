@@ -13,9 +13,23 @@
   padding:0;
 }
 
+:root{
+  --green:#173B32;
+  --green2:#245447;
+  --cream:#F6F0E4;
+  --cream2:#EDE3D1;
+  --terracotta:#B85C38;
+  --terracotta2:#D4774F;
+  --wood:#70452F;
+  --gold:#C79B55;
+  --dark:#102B25;
+  --text:#20332E;
+  --muted:#6C756F;
+}
+
 body{
-  background:#10100f;
-  color:#f5f0e8;
+  background:var(--cream);
+  color:var(--text);
   font-family:Arial,Helvetica,sans-serif;
   overflow-x:hidden;
 }
@@ -26,145 +40,218 @@ body{
 }
 
 /* HEADER */
+
 header{
-  padding:28px 22px 10px;
+  padding:24px 20px 18px;
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
+  background:var(--cream);
 }
 
 .logo{
-  font-size:30px;
+  color:var(--green);
+  font-size:29px;
   font-weight:900;
   letter-spacing:1px;
 }
 
 .logo span{
   display:block;
-  margin-top:8px;
+  margin-top:5px;
 }
 
 .location{
-  color:#c9b79a;
-  font-size:14px;
+  color:var(--wood);
+  font-size:12px;
+  font-weight:bold;
   margin-top:8px;
   text-align:right;
+  letter-spacing:.5px;
 }
 
 /* HERO */
+
 .hero{
-  margin:10px 18px 35px;
-  min-height:560px;
-  border-radius:0 0 38px 38px;
+  margin:0 15px 45px;
+  min-height:620px;
+  border-radius:34px;
   overflow:hidden;
   position:relative;
   background:
-    radial-gradient(circle at 70% 30%,#725335 0%,#342417 28%,#17130f 70%);
-  border-bottom:1px solid #80643c;
+    radial-gradient(circle at 78% 25%,#356B5B 0%,#173B32 38%,#102B25 78%);
+  box-shadow:0 18px 45px rgba(25,53,44,.20);
 }
+
+/* decorative circles */
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:230px;
+  height:230px;
+  border-radius:50%;
+  background:rgba(199,155,85,.13);
+  right:-80px;
+  top:-60px;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  background:rgba(212,119,79,.10);
+  left:-90px;
+  bottom:80px;
+}
+
+/* HERO FURNITURE */
 
 .hero-furniture{
-  height:260px;
-  position:relative;
+  height:300px;
   display:flex;
   justify-content:center;
-  align-items:flex-end;
+  align-items:center;
+  position:relative;
+  z-index:2;
 }
 
-/* SOFA VISUAL */
+/* Sofa */
+
 .sofa{
-  width:300px;
-  height:130px;
+  width:320px;
+  height:180px;
   position:relative;
-  margin-bottom:15px;
+}
+
+.sofa-back{
+  position:absolute;
+  left:50px;
+  top:25px;
+  width:220px;
+  height:95px;
+  background:linear-gradient(145deg,#C96D47,#A94F31);
+  border-radius:28px 28px 12px 12px;
+  box-shadow:0 22px 35px rgba(0,0,0,.30);
 }
 
 .sofa-seat{
   position:absolute;
   left:35px;
-  bottom:25px;
-  width:230px;
+  bottom:38px;
+  width:250px;
   height:58px;
-  background:linear-gradient(#9b7048,#67482f);
-  border-radius:18px 18px 12px 12px;
-  box-shadow:0 15px 25px #0008;
-}
-
-.sofa-back{
-  position:absolute;
-  left:45px;
-  top:25px;
-  width:210px;
-  height:75px;
-  background:linear-gradient(135deg,#b18559,#63442c);
-  border-radius:22px 22px 10px 10px;
+  background:linear-gradient(145deg,#D47A50,#A94F31);
+  border-radius:18px;
 }
 
 .arm-left,
 .arm-right{
   position:absolute;
-  bottom:30px;
-  width:45px;
-  height:75px;
-  background:#765335;
-  border-radius:18px;
+  bottom:42px;
+  width:52px;
+  height:90px;
+  background:#9C472D;
+  border-radius:20px;
 }
 
-.arm-left{left:20px;}
-.arm-right{right:20px;}
+.arm-left{
+  left:15px;
+}
+
+.arm-right{
+  right:15px;
+}
 
 .leg{
   position:absolute;
-  bottom:5px;
-  width:10px;
-  height:28px;
-  background:#2d2118;
+  bottom:12px;
+  width:12px;
+  height:30px;
+  background:#7C5438;
   border-radius:4px;
 }
 
-.leg.one{left:55px;}
-.leg.two{right:55px;}
+.leg.one{
+  left:60px;
+}
+
+.leg.two{
+  right:60px;
+}
+
+/* Hero Text */
 
 .hero-text{
   position:absolute;
+  z-index:3;
+  left:25px;
+  right:25px;
   bottom:38px;
-  left:20px;
-  right:20px;
 }
 
 .kicker{
-  color:#c9a76c;
-  font-size:13px;
-  letter-spacing:5px;
-  margin-bottom:22px;
+  color:#E0BC78;
+  font-size:12px;
+  letter-spacing:4px;
+  font-weight:bold;
+  margin-bottom:18px;
 }
 
 h1{
-  font-size:54px;
-  line-height:.98;
+  color:#FFF8ED;
+  font-size:48px;
+  line-height:1.02;
   letter-spacing:-2px;
-  max-width:600px;
+  max-width:650px;
 }
 
 .hero-description{
-  color:#aaa39a;
-  font-size:18px;
-  line-height:1.5;
+  color:#D4DED9;
+  font-size:16px;
+  line-height:1.55;
+  margin-top:20px;
+  max-width:560px;
+}
+
+/* BUTTON */
+
+.hero-button{
+  display:inline-block;
   margin-top:24px;
-  max-width:550px;
+  padding:13px 21px;
+  border-radius:30px;
+  background:#F5E7D0;
+  color:var(--green);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:bold;
 }
 
 /* COLLECTION */
+
 .section{
-  padding:10px 18px 45px;
+  padding:0 18px 45px;
 }
 
 .section-title{
-  font-size:13px;
-  color:#bda77f;
+  color:var(--wood);
+  font-size:12px;
   letter-spacing:4px;
-  margin-bottom:20px;
+  font-weight:bold;
+  margin-bottom:18px;
 }
+
+.section-heading{
+  color:var(--green);
+  font-size:34px;
+  line-height:1.05;
+  margin-bottom:25px;
+}
+
+/* CARDS */
 
 .cards{
   display:grid;
@@ -173,305 +260,394 @@ h1{
 }
 
 .card{
-  min-height:310px;
-  border:1px solid #37332c;
-  border-radius:32px;
-  background:#211f1a;
   overflow:hidden;
-  transition:.3s;
-  position:relative;
+  border-radius:27px;
+  background:#FFFDF8;
+  border:1px solid #DED3C0;
+  box-shadow:0 8px 25px rgba(55,43,30,.08);
+  transition:.25s;
 }
 
 .card:hover{
-  border-color:#a98a59;
   transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(55,43,30,.13);
 }
+
+/* CARD VISUAL */
 
 .card-top{
   height:150px;
+  position:relative;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   background:
-    radial-gradient(circle,#62482f,#252018 65%);
-  position:relative;
+    linear-gradient(145deg,#E9DCC7,#F7F0E4);
+  overflow:hidden;
 }
 
-/* CARD FURNITURE */
-.mini-sofa{
-  width:130px;
-  height:65px;
-  position:relative;
-}
-
-.mini-sofa .seat{
+.card-top:after{
+  content:"";
   position:absolute;
-  bottom:8px;
-  left:15px;
-  width:100px;
-  height:30px;
-  background:#9a7048;
-  border-radius:10px;
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  background:rgba(184,92,56,.08);
+}
+
+/* MINI SOFA */
+
+.mini-sofa{
+  width:140px;
+  height:90px;
+  position:relative;
+  z-index:2;
 }
 
 .mini-sofa .back{
   position:absolute;
-  left:20px;
-  top:8px;
-  width:90px;
-  height:40px;
-  background:#704e32;
-  border-radius:12px;
+  left:23px;
+  top:12px;
+  width:94px;
+  height:47px;
+  background:#B85C38;
+  border-radius:14px;
+}
+
+.mini-sofa .seat{
+  position:absolute;
+  left:15px;
+  bottom:17px;
+  width:110px;
+  height:30px;
+  background:#CC704B;
+  border-radius:10px;
 }
 
 .mini-sofa .arm{
   position:absolute;
-  bottom:10px;
-  width:20px;
-  height:42px;
-  background:#604329;
-  border-radius:8px;
+  bottom:17px;
+  width:23px;
+  height:48px;
+  background:#9F4A30;
+  border-radius:9px;
 }
 
-.mini-sofa .a1{left:8px;}
-.mini-sofa .a2{right:8px;}
+.mini-sofa .a1{
+  left:5px;
+}
+
+.mini-sofa .a2{
+  right:5px;
+}
+
+/* BED */
 
 .bed{
-  width:145px;
-  height:90px;
+  width:150px;
+  height:100px;
   position:relative;
+  z-index:2;
 }
 
 .bed .head{
   position:absolute;
-  left:10px;
+  left:15px;
   top:5px;
-  width:25px;
-  height:72px;
-  background:#8b6746;
+  width:28px;
+  height:75px;
+  background:#70452F;
   border-radius:8px;
 }
 
 .bed .mattress{
   position:absolute;
-  left:30px;
-  top:30px;
-  width:105px;
-  height:45px;
-  background:#c7b08e;
+  left:38px;
+  top:37px;
+  width:100px;
+  height:42px;
+  background:#FFF8EB;
   border-radius:8px;
+  box-shadow:0 8px 12px #0001;
+}
+
+.bed .blanket{
+  position:absolute;
+  left:65px;
+  top:38px;
+  width:73px;
+  height:40px;
+  background:#D4774F;
+  border-radius:5px 8px 8px 5px;
 }
 
 .bed .pillow{
   position:absolute;
-  left:38px;
-  top:36px;
-  width:35px;
-  height:20px;
-  background:#eee4d3;
-  border-radius:6px;
+  left:45px;
+  top:43px;
+  width:30px;
+  height:18px;
+  background:#F2E7D4;
+  border-radius:5px;
 }
 
+/* DINING */
+
 .table{
-  width:130px;
-  height:100px;
+  width:150px;
+  height:110px;
   position:relative;
+  z-index:2;
 }
 
 .table .top{
   position:absolute;
-  top:20px;
-  left:15px;
-  width:100px;
-  height:20px;
-  background:#9a7048;
-  border-radius:5px;
+  top:25px;
+  left:20px;
+  width:110px;
+  height:19px;
+  background:#70452F;
+  border-radius:6px;
 }
 
 .table .leg1,
 .table .leg2{
   position:absolute;
-  top:38px;
+  top:42px;
   width:10px;
   height:55px;
-  background:#604329;
+  background:#513426;
+  border-radius:3px;
 }
 
-.table .leg1{left:30px;}
-.table .leg2{right:30px;}
+.table .leg1{
+  left:40px;
+}
+
+.table .leg2{
+  right:40px;
+}
 
 .chair{
   position:absolute;
-  width:35px;
-  height:55px;
-  border:8px solid #795637;
-  border-bottom:0;
   bottom:15px;
+  width:36px;
+  height:53px;
+  border:8px solid #B85C38;
+  border-bottom:0;
   border-radius:8px 8px 0 0;
 }
 
-.chair.one{left:5px;}
-.chair.two{right:5px;}
+.chair.one{
+  left:2px;
+}
+
+.chair.two{
+  right:2px;
+}
+
+/* SHOWROOM */
 
 .showroom{
   width:160px;
   height:110px;
   position:relative;
+  z-index:2;
 }
 
 .showroom .wall{
   position:absolute;
-  left:15px;
-  top:10px;
-  width:130px;
+  left:10px;
+  top:8px;
+  width:140px;
   height:75px;
-  background:#705238;
-  border-radius:5px;
+  background:#173B32;
+  border-radius:7px;
 }
 
 .showroom .window{
   position:absolute;
-  left:30px;
-  top:22px;
-  width:42px;
-  height:42px;
-  background:#c8aa76;
-  border:4px solid #33261b;
+  left:24px;
+  top:21px;
+  width:48px;
+  height:45px;
+  background:#E0BC78;
+  border:5px solid #70452F;
 }
 
 .showroom .cabinet{
   position:absolute;
-  right:27px;
-  top:35px;
-  width:48px;
-  height:45px;
-  background:#4b3524;
-  border:3px solid #9b754b;
+  right:24px;
+  top:37px;
+  width:52px;
+  height:43px;
+  background:#70452F;
+  border:3px solid #C79B55;
 }
 
 .showroom .floor{
   position:absolute;
-  bottom:8px;
-  left:5px;
-  width:150px;
+  bottom:10px;
+  left:0;
+  width:160px;
   height:18px;
-  background:#684b30;
+  background:#B85C38;
+  border-radius:5px;
 }
 
+/* CARD TEXT */
+
 .card-content{
-  padding:22px;
+  padding:20px;
 }
 
 .number{
-  font-size:12px;
-  color:#9f9689;
+  color:#B85C38;
+  font-size:11px;
   letter-spacing:2px;
-  margin-bottom:22px;
+  font-weight:bold;
+  margin-bottom:16px;
 }
 
 .card h2{
-  font-size:23px;
+  color:var(--green);
+  font-size:21px;
   line-height:1.2;
 }
 
 .card p{
-  margin-top:14px;
-  color:#a9a299;
-  font-size:15px;
+  color:var(--muted);
+  font-size:14px;
   line-height:1.5;
+  margin-top:12px;
 }
 
 /* CONTACT */
+
 .contact{
-  margin:5px 18px 30px;
-  padding:30px 24px;
+  margin:0 18px 30px;
+  padding:32px 25px;
   border-radius:30px;
-  background:#e8ddca;
-  color:#171410;
+  background:var(--green);
+  color:#FFF8ED;
+  position:relative;
+  overflow:hidden;
+}
+
+.contact:after{
+  content:"";
+  position:absolute;
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  background:rgba(199,155,85,.12);
+  right:-70px;
+  top:-60px;
 }
 
 .contact small{
-  color:#7c6a50;
+  color:#E0BC78;
   letter-spacing:3px;
+  font-size:11px;
 }
 
 .contact h2{
-  font-size:32px;
+  font-size:31px;
+  line-height:1.1;
   margin:12px 0;
+  position:relative;
+  z-index:2;
 }
 
 .contact p{
-  color:#62594e;
+  color:#D4DED9;
   line-height:1.5;
+  font-size:15px;
   margin-bottom:22px;
+  position:relative;
+  z-index:2;
 }
 
 .buttons{
   display:flex;
   gap:10px;
   flex-wrap:wrap;
+  position:relative;
+  z-index:3;
 }
 
 .btn{
   text-decoration:none;
-  padding:15px 20px;
+  padding:14px 18px;
   border-radius:30px;
   font-weight:bold;
-  display:inline-block;
+  font-size:14px;
 }
 
 .call{
-  background:#171410;
-  color:white;
+  background:#F6E8D1;
+  color:var(--green);
 }
 
 .whatsapp{
-  background:#705333;
+  background:#B85C38;
   color:white;
 }
 
 /* FOOTER */
+
 footer{
   text-align:center;
-  padding:10px 20px 35px;
-  color:#777067;
-  font-size:12px;
+  padding:5px 20px 35px;
+  color:#8A8277;
+  font-size:11px;
+  letter-spacing:1px;
 }
 
 /* MOBILE */
+
 @media(max-width:600px){
 
   header{
-    padding:25px 20px 5px;
+    padding:22px 20px 16px;
   }
 
   .logo{
-    font-size:29px;
+    font-size:27px;
   }
 
   .location{
-    font-size:12px;
+    font-size:11px;
   }
 
   .hero{
-    min-height:535px;
-    margin:10px 15px 35px;
+    min-height:610px;
+    margin:0 14px 42px;
+    border-radius:32px;
   }
 
   .hero-furniture{
-    height:235px;
+    height:285px;
   }
 
   .sofa{
-    transform:scale(.9);
+    transform:scale(.86);
   }
 
   h1{
-    font-size:50px;
+    font-size:47px;
   }
 
   .hero-description{
-    font-size:16px;
+    font-size:15px;
+  }
+
+  .section{
+    padding:0 17px 42px;
+  }
+
+  .section-heading{
+    font-size:31px;
   }
 
   .cards{
@@ -479,8 +655,7 @@ footer{
   }
 
   .card{
-    min-height:300px;
-    border-radius:28px;
+    border-radius:25px;
   }
 
   .card-top{
@@ -492,26 +667,42 @@ footer{
   }
 
   .card h2{
-    font-size:21px;
+    font-size:20px;
   }
 
   .card p{
-    font-size:14px;
+    font-size:13px;
+  }
+
+  .contact{
+    margin:0 17px 28px;
   }
 }
 
 @media(max-width:390px){
 
-  h1{
-    font-size:44px;
-  }
-
   .logo{
-    font-size:25px;
+    font-size:24px;
   }
 
   .location{
-    font-size:11px;
+    font-size:10px;
+  }
+
+  h1{
+    font-size:42px;
+  }
+
+  .hero{
+    min-height:590px;
+  }
+
+  .hero-furniture{
+    height:260px;
+  }
+
+  .section-heading{
+    font-size:28px;
   }
 }
 </style>
@@ -522,6 +713,7 @@ footer{
 <div class="page">
 
 <header>
+
   <div class="logo">
     ★ STAR
     <span>FURNITURE</span>
@@ -530,6 +722,7 @@ footer{
   <div class="location">
     HARIHAR · KARNATAKA
   </div>
+
 </header>
 
 
@@ -540,7 +733,6 @@ footer{
     <div class="sofa">
 
       <div class="sofa-back"></div>
-
       <div class="sofa-seat"></div>
 
       <div class="arm-left"></div>
@@ -566,20 +758,29 @@ footer{
     </h1>
 
     <p class="hero-description">
-      Discover furniture designed to bring comfort,
-      character and style into every room.
+      Discover furniture designed to bring
+      comfort, character and style into every room.
     </p>
+
+    <a href="#collection" class="hero-button">
+      Explore Collection →
+    </a>
 
   </div>
 
 </section>
 
 
-<section class="section">
+<section class="section" id="collection">
 
   <div class="section-title">
-    OUR COLLECTION
+    STAR FURNITURE
   </div>
+
+  <div class="section-heading">
+    Designed for your home.
+  </div>
+
 
   <div class="cards">
 
@@ -631,6 +832,7 @@ footer{
 
           <div class="head"></div>
           <div class="mattress"></div>
+          <div class="blanket"></div>
           <div class="pillow"></div>
 
         </div>
@@ -665,6 +867,7 @@ footer{
         <div class="table">
 
           <div class="top"></div>
+
           <div class="leg1"></div>
           <div class="leg2"></div>
 
